@@ -41,7 +41,13 @@ $residential = new ResidentialWay(2, 50);
 echo $residential->addVehicle($bicycle);
 var_dump($residential);
 
-
+try {
+    $car->start();
+}catch (Exception $e){
+    $car->setParkBrake(false);
+} finally {
+    echo "Ma voiture roule comme un donut";
+};
 
 
 
